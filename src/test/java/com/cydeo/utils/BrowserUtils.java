@@ -1,6 +1,8 @@
 package com.cydeo.utils;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.options.ElementState;
 
 /**
  * @author ghalipm on 4/21/2024
@@ -20,9 +22,13 @@ public class BrowserUtils {
 
     }
 
-    public static void sleepWithPage(Page page, int seconds){
+    public static void sleepWithPage(Page page,int seconds){
         page.waitForTimeout(seconds*1000);
 
+    }
+
+    public static void waitForInvisibilityOfElement(Locator locator){
+        locator.elementHandle().waitForElementState(ElementState.HIDDEN);
     }
 
 

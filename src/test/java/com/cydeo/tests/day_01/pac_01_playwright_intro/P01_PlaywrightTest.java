@@ -12,12 +12,17 @@ public class P01_PlaywrightTest {
     public static void main(String[] args) throws InterruptedException {
 
         Playwright playwright=Playwright.create();
-        BrowserType chromium = playwright.chromium();
-        Browser browser = chromium.launch(
-                //if you want to see browser pass this line
-                new BrowserType.LaunchOptions().setHeadless(false));
+//        BrowserType chromium = playwright.chromium();
+//        Browser browser = chromium.launch(
+//                //if you want to see browser pass this line
+//                new BrowserType.LaunchOptions().setHeadless(false));
+//        Page page = browser.newPage();
+
+        // msedge browser:
+        Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("msedge").setHeadless(false));
         Page page = browser.newPage();
-        page.navigate("http://www.google.com");
+
+        page.navigate("https://www.msn.com/");
         Thread.sleep(3000);
 
 

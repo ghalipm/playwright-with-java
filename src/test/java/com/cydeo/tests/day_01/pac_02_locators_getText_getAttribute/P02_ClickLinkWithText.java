@@ -1,9 +1,6 @@
 package com.cydeo.tests.day_01.pac_02_locators_getText_getAttribute;
 
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -24,8 +21,8 @@ public class P02_ClickLinkWithText {
 
         // page.waitForTimeout(3000);
         // page.setViewportSize(1920, 1080);
-        page.click("text=Autocomplete");
-
+        //page.click("text=Autocomplete");
+        page.click("//a[@href='/autocomplete']");
         page.waitForTimeout(1000);
 
         System.out.println(page.title());
