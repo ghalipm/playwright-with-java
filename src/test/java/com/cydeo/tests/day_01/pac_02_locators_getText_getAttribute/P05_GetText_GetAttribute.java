@@ -30,9 +30,7 @@ public class P05_GetText_GetAttribute {
         String expectedTitle="Registration form";
 
         String actualTitle = page.getByRole(AriaRole.HEADING).textContent();
-
         Assertions.assertEquals(expectedTitle,actualTitle);
-
 
         String placeholder = page.querySelector("//input[@name='firstname']").getAttribute("placeholder");
 

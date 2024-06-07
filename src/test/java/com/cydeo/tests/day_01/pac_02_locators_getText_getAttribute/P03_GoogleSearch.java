@@ -4,6 +4,7 @@ import com.microsoft.playwright.*;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static java.lang.System.in;
 import static java.lang.Thread.sleep;
 
 /**

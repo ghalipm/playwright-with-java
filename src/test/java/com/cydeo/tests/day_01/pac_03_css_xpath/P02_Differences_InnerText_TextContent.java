@@ -11,6 +11,11 @@ import org.junit.jupiter.api.Test;
  * @project playwright-with-java
  */
 public class P02_Differences_InnerText_TextContent {
+    /**
+     * Using "textContent" will return the complete text content,
+     * including the hidden text. However, using "innerText" will
+     * only return the visible text content, excluding the hidden text.
+     */
 
     @Test
     void test1() {
@@ -24,14 +29,14 @@ public class P02_Differences_InnerText_TextContent {
         Page page = browser.newPage();
 
         page.navigate("http://localhost:63342/playwright-with-java/getText.html?_ijt=rnvqs4ngag959592el1qeu1vs&_ij_reload=RELOAD_ON_SAVE");
-
+        page.waitForTimeout(1000);
         String textContent = page.querySelector("#example").textContent();
         String innerText = page.querySelector("#example").innerText();
 
-        System.out.println("textContent = " + textContent); // p
-        System.out.println("innerText = " + innerText); //
+        System.out.println("textContent = " + textContent); // '\n    This is a paragraph with bold and italic text.\n'
+        System.out.println("innerText = " + innerText); //           'This is a paragraph with bold and italic text.'
 
-        page.waitForTimeout(3000);
+        page.waitForTimeout(2000);
         page.close();
         browser.close();
         playwright.close();

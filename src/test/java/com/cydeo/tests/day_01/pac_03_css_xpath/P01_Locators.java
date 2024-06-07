@@ -25,7 +25,8 @@ public class P01_Locators {
 
         page.querySelector("[name=USER_LOGIN]").fill("incorrectuser");
         page.querySelector("[name='USER_PASSWORD']").fill("incorrectpassword");
-        page.querySelector(".login-btn").click();
+//      // page.querySelector(".login-btn").click();
+        page.querySelector("input.login-btn").click();
 
         String errorMessage = page.querySelector(".errortext").textContent();
 

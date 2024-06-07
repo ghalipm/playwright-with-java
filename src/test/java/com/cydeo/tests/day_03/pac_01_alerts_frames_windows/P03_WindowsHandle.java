@@ -1,10 +1,7 @@
 package com.cydeo.tests.day_03.pac_01_alerts_frames_windows;
 
 import com.cydeo.utils.BrowserUtils;
-import com.microsoft.playwright.Browser;
-import com.microsoft.playwright.BrowserType;
-import com.microsoft.playwright.Page;
-import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.*;
 import org.junit.jupiter.api.*;
 
 /**
@@ -12,7 +9,6 @@ import org.junit.jupiter.api.*;
  * @project playwright-with-java
  */
 public class P03_WindowsHandle {
-
 
     static private Playwright playwright;
 
@@ -53,7 +49,7 @@ public class P03_WindowsHandle {
     @Test
     void test1() {
 
-        page.pause();
+        //page.pause();
 
         //get the title
         System.out.println("before clicking page title = " + page.title());
@@ -61,14 +57,11 @@ public class P03_WindowsHandle {
         //click Click Here button (it will open a new tab)
 
 
-/*
      //   search   it
         ElementHandle locator = page.querySelector("text=Click Here");
-
-
         locator.click();
 
-*/
+
 
         //get second window title
         BrowserUtils.sleepWithThread(3);
