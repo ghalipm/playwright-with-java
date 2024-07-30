@@ -31,4 +31,10 @@ public class Equality4Testing {
         int num=8;
         Assertions.assertEquals(num+1,9);
     }
+
+    @Test
+    public void test05(){
+        int num=9;
+        Assertions.assertEquals(num+1,10);
+    }
 }
